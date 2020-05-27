@@ -1,2 +1,3 @@
 .flaskenv
 *.DS_Store
+.idea/
