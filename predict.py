@@ -26,6 +26,7 @@ class Model():
         return self.scaler.transform(features)
 
     def predict(self, features):
-        features = self.preprocess(features)
+        # features = self.preprocess(features)
+        features = np.array(features).reshape(1, -1)
         prediction = self.model.predict(features)
         return self.get_label(prediction)
