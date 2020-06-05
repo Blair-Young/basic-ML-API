@@ -23,7 +23,6 @@ class Model():
     def preprocess(self, features):
         features = np.array(features)
         features = features.reshape(1, -1)
-        print(f'features pre transform {features}')
         return self.scaler.transform(features)
 
     def predict(self, features):

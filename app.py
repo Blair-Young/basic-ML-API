@@ -18,9 +18,8 @@ def main():
 
         features = [sepal_length, sepal_width,
                     petal_length, petal_width]
-        print(f'features in {features}')
         prediction = model.predict(features=features)
         return flask.render_template('main.html', result=prediction)
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1',port=8000,debug=True)
+    app.run()
