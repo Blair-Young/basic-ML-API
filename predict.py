@@ -21,12 +21,17 @@ class Model():
         return map[prediction[0]]
 
     def preprocess(self, features):
+        print(f'features at start of prepross {features}')
         features = np.array(features)
         features = features.reshape(1, -1)
         return self.scaler.transform(features)
 
     def predict(self, features):
-        # features = self.preprocess(features)
+        features = self.preprocess(features)
         features = np.array(features).reshape(1, -1)
+        print(f'features at before predict {features}')
         prediction = self.model.predict(features)
         return self.get_label(prediction)
+
+# m = Model()
+# print(m.predict(['1','2','1','1']))
