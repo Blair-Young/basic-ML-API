@@ -32,9 +32,9 @@ class Model():
 
 
 
-
-clf =  Model()
-print(clf.predict([5.1, 3.5, 1.4, 0.2]))
+#
+# clf =  Model()
+# print(clf.predict([5.1, 3.5, 1.4, 0.2]))
 
 
 

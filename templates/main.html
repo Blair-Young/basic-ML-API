@@ -1,10 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+<style>
+form {
+    margin: auto;
+    width: 35%;
+}
+.result {
+    margin: auto;
+    width: 35%;
+    border: 1px solid #ccc;
+}
+</style>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Wtf plant is that?!</title>
 </head>
-<body>
-$END$
-</body>
+<form action="{{ url_for('main') }}" method="POST">
+    <fieldset>
+        <legend>Input values:</legend>
+        sepal length (cm):
+        <input name="sepal_length" type="number" required>
+        <br>
+        <br> sepal width (cm):
+        <input name="sepal_width" type="number" required>
+        <br>
+        <br> petal length (cm):
+        <input name="petal_length" type="number" required>
+        <br>
+        <br> petal width (cm):
+        <input name="petal_width" type="number" required>
+        <br>
+        <input type="submit">
+    </fieldset>
+</form>
+<br>
+<div class="result" align="center">
+    {% if result %}
+    <br> It's this plant!:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
 </html>
