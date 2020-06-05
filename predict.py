@@ -29,14 +29,3 @@ class Model():
         features = self.preprocess(features)
         prediction = self.model.predict(features)
         return self.get_label(prediction)
-
-
-
-
-clf =  Model()
-print(clf.predict(np.array([5.1, 3.5, 1.4, 0.2])))
-
-
-
-
-

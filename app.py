@@ -18,6 +18,7 @@ def main():
 
         features = [sepal_length, sepal_width,
                     petal_length, petal_width]
+        print(f'features here {features}!!!!!!!!!!!!!!!')
         prediction = model.predict(features=features)
         return flask.render_template('main.html', result=prediction)
 
