@@ -16,8 +16,9 @@ def main():
         petal_length = flask.request.form['petal_length']
         petal_width = flask.request.form['petal_width']
 
-        features = np.array([sepal_length, sepal_width,
-                             petal_length, petal_width])
+        features = [sepal_length, sepal_width,
+                    petal_length, petal_width]
+        print(f'features in {features}')
         prediction = model.predict(features=features)
         return flask.render_template('main.html', result=prediction)
 

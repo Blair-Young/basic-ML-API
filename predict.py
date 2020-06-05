@@ -23,6 +23,7 @@ class Model():
     def preprocess(self, features):
         features = np.array(features)
         features = features.reshape(1, -1)
+        print(f'features pre transform {features}')
         return self.scaler.transform(features)
 
     def predict(self, features):
@@ -32,9 +33,9 @@ class Model():
 
 
 
-#
-# clf =  Model()
-# print(clf.predict([5.1, 3.5, 1.4, 0.2]))
+
+clf =  Model()
+print(clf.predict(np.array([5.1, 3.5, 1.4, 0.2])))
 
 
 
