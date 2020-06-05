@@ -4,7 +4,7 @@ import numpy as np
 class Model():
     def __init__(self):
         self.model = self.load_model()
-        # self.scaler = self.load_scaler()
+        self.scaler = self.load_scaler()
 
     def load_model(self):
         with open('registry/clf.pk', 'rb') as f:
@@ -27,11 +27,11 @@ class Model():
         return self.scaler.transform(features)
 
     def predict(self, features):
-        # features = self.preprocess(features)
-        # features = np.array(features).reshape(1, -1)
+        features = self.preprocess(features)
+        features = np.array(features).reshape(1, -1)
         print(f'features at before predict {features}')
         prediction = self.model.predict(features)
         return self.get_label(prediction)
 
-# m = Model()
-# print(m.predict([1,1,1,1]))
+m = Model()
+print(m.predict([1,1,1,1]))
